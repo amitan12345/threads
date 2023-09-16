@@ -9,6 +9,13 @@ class Comment extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'user_id',
+        'thread_id',
+        'message',
+        'parent_comment_id',
+    ];
+
     public function thread()
     {
         return $this->belongsTo(Thread::class);
