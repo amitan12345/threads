@@ -1,6 +1,7 @@
 <?php
 
-use App\Livewire\Thread;
+use App\Http\Controllers\Login\LoginController;
+use App\Http\Controllers\Login\LoginFormController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,4 +15,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', Thread::class);
+Route::get('/login', [LoginFormController::class, 'index'])->name('login');
+Route::post('/login', [LoginController::class, 'login']);
+
+Route::group(['middleware' => ['auth']], function() {
+    Route::get('/', fn() => 'Here is home')->name('home');
+    Route::get('/test', fn() => 'test');
+});
