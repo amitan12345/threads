@@ -3,6 +3,7 @@
 use App\Http\Controllers\Login\LoginController;
 use App\Http\Controllers\Login\LoginFormController;
 use App\Livewire\Thread;
+use App\Livewire\Tweet;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,4 +22,5 @@ Route::post('/login', [LoginController::class, 'login']);
 
 Route::group(['middleware' => ['auth']], function() {
     Route::get('/thread', Thread::class);
+    Route::get('/tweet', Tweet::class);
 });
