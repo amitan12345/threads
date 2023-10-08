@@ -21,7 +21,7 @@ class LoginController extends Controller
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
 
-            return redirect('/thread');
+            return redirect('/dashboard');
         }
 
         return back()->onlyInput('email');

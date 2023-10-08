@@ -21,6 +21,6 @@ Route::get('/login', [LoginFormController::class, 'index'])->name('login');
 Route::post('/login', [LoginController::class, 'login']);
 
 Route::group(['middleware' => ['auth']], function() {
-    Route::get('/thread', Thread::class);
-    Route::get('/tweet', Tweet::class);
+    Route::get('/dashboard', fn() => view('dashboard'));
 });
+
