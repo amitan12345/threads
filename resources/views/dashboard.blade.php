@@ -12,7 +12,7 @@
     <div class="h-full">
         <livewire:user-thread-list />
     </div>
-    <div class="h-full">
+    <div class="h-full hidden">
         <livewire:user-tweet-list />
     </div>
 </div>
