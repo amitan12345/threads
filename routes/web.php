@@ -2,7 +2,6 @@
 
 use App\Http\Controllers\Login\LoginController;
 use App\Http\Controllers\Login\LoginFormController;
-use App\Livewire\UserThreadList;
 use Illuminate\Support\Facades\Route;
 
 /*
