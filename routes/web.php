@@ -2,8 +2,7 @@
 
 use App\Http\Controllers\Login\LoginController;
 use App\Http\Controllers\Login\LoginFormController;
-use App\Livewire\Thread;
-use App\Livewire\Tweet;
+use App\Livewire\UserThreadList;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,4 +22,5 @@ Route::post('/login', [LoginController::class, 'login']);
 Route::group(['middleware' => ['auth']], function() {
     Route::get('/dashboard', fn() => view('dashboard'));
 });
+
 
