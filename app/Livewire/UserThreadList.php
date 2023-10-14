@@ -5,6 +5,7 @@ namespace App\Livewire;
 use App\Models\Thread;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Auth;
+use Livewire\Attributes\On;
 use Livewire\Component;
 
 class UserThreadList extends Component
@@ -13,7 +14,13 @@ class UserThreadList extends Component
 
     public function mount()
     {
-        $this->threads = Thread::where('user_id', Auth::user()->id)->get();
+        $this->updateThreads();
+    }
+
+    #[On('thread-created')]
+    public function updateThreads()
+    {
+        $this->threads = Thread::where('user_id', Auth::user()->id)->orderByDesc('created_at')->get();   
     }
 
     public function render()

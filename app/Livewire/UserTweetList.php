@@ -13,7 +13,7 @@ class UserTweetList extends Component
 
     public function mount()
     {
-        $this->tweets = Tweet::where('user_id', Auth::user()->id)->get();
+        $this->tweets = Tweet::where('user_id', Auth::user()->id)->orderByDesc('created_at')->get();
     }
 
     public function render()
