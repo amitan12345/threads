@@ -29,6 +29,7 @@ class CreateThreadButton extends Component
         $this->description = '';
 
         $this->dispatch('thread-created');
+        $this->dispatch('activate-threads');
     }
 
     public function render()

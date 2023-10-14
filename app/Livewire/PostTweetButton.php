@@ -26,6 +26,7 @@ class PostTweetButton extends Component
         $this->tweet = '';
 
         $this->dispatch('posted-tweet');
+        $this->dispatch('activate-tweets');
     }
 
     public function render()
