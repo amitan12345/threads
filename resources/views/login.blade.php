@@ -1,3 +1,4 @@
+<h1>Login Page</h1>
 <form method="POST" action="/login">
     @csrf
     <div>
@@ -10,3 +11,4 @@
     </div>
     <input type="submit" value="ログイン">
 </form>
+<a href="/register-account">Account Registration is here...</a>
