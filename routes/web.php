@@ -3,6 +3,7 @@
 use App\Http\Controllers\Login\LoginController;
 use App\Http\Controllers\Login\LoginFormController;
 use App\Http\Controllers\RegisterAccountController;
+use App\Http\Controllers\ThreadDetailController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,4 +27,6 @@ Route::group(['middleware' => ['auth']], function() {
     Route::get('/dashboard', fn() => view('dashboard'));
 
     Route::redirect('/', '/dashboard', 301);
+
+    Route::get('/thread/{threadId}', [ThreadDetailController::class, 'index']);
 });
