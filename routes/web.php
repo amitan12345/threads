@@ -20,4 +20,6 @@ Route::post('/login', [LoginController::class, 'login']);
 
 Route::group(['middleware' => ['auth']], function() {
     Route::get('/dashboard', fn() => view('dashboard'));
+
+    Route::redirect('/', '/dashboard', 301);
 });
