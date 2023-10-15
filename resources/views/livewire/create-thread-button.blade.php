@@ -10,9 +10,9 @@
             <!-- Modal content -->
             <div class="relative bg-white rounded-lg flex justify-center items-center h-[80vh]">
                 <form wire:submit="createThread">
-                    <input class="bg-gray-200 rounded w-5/6" type="text" placeholder="Thread Name" wire:model="threadName">
-                    <textarea class="bg-gray-200 rounded w-5/6 h-32" placeholder="Type a description..." wire:model="description"></textarea>
-                    <input data-modal-hide="createThreadModal" type="submit" value="Create Thread" class="bg-gray-400 rounded-lg">
+                    <div><input class="bg-gray-200 rounded w-5/6" type="text" placeholder="Thread Name" wire:model="threadName"></div>
+                    <div><textarea class="bg-gray-200 rounded w-5/6 h-32" placeholder="Type a description..." wire:model="description"></textarea></div>
+                    <div><input data-modal-hide="createThreadModal" type="submit" value="Create Thread" class="bg-gray-400 rounded-lg"></div>
                 </form>
             </div>
         </div>

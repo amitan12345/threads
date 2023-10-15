@@ -3,12 +3,13 @@
 namespace App\Livewire;
 
 use App\Models\Thread;
+use Livewire\Attributes\On;
 use Livewire\Component;
 
 class ThreadDetail extends Component
 {
-    protected int $threadId;
-    protected Thread $thread;
+    public int $threadId;
+    public Thread $thread;
 
     public function mount(int $threadId)
     {
@@ -16,7 +17,8 @@ class ThreadDetail extends Component
         $this->updateThread();
     }
 
-    protected function updateThread()
+    #[On('posted-comment')]
+    public function updateThread()
     {
         $this->thread = Thread::with(['comments.user', 'user'])->find($this->threadId);
     }

@@ -7,7 +7,7 @@ use Livewire\Component;
 
 class Header extends Component
 {
-    protected string $userName;
+    public string $userName;
 
     public function mount()
     {

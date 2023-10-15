@@ -10,8 +10,8 @@
             <!-- Modal content -->
             <div class="relative bg-white rounded-lg flex justify-center items-center h-[80vh]">
                 <form wire:submit="postTweet">
-                    <textarea class="bg-gray-200 rounded w-5/6 h-32" placeholder="Type a tweet..." wire:model="tweet"></textarea>
-                    <input data-modal-hide="postTweetModal" type="submit" value="Tweet" class="bg-gray-400 rounded-lg">
+                    <div><textarea class="bg-gray-200 rounded w-5/6 h-32" placeholder="Type a tweet..." wire:model="tweet"></textarea></div>
+                    <div><input data-modal-hide="postTweetModal" type="submit" value="Tweet" class="bg-gray-400 rounded-lg"></div>
                 </form>
             </div>
         </div>
