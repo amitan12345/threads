@@ -1,6 +1,6 @@
-@extends('template')
+@extends('main-contents-template')
 
-@section('contents')
+@section('main-contents')
 <livewire:thread-detail :threadId="$threadId" />
 <livewire:post-thread-comment-button :threadId="$threadId" />
 @endsection
