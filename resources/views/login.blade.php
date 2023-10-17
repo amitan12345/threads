@@ -2,7 +2,7 @@
 
 @section('contents')
 <div class="bold text-2xl m-1">Login Page</div>
-<div class="bg-blue-100 rounded m-2 p-2">
+<div class="bg-blue-100 rounded m-2 p-2 w-60">
     <form method="POST" action="/login" class="flex-row justify-center">
         @csrf
         <div class="m-1">
