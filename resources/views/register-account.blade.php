@@ -28,5 +28,10 @@
     <div class="m-1">
         <input type="submit" value="Register" class="border-2 border-black bg-gray-200 hover:bg-gray-300 rounded">
     </div>
+    <div class="m-1">
+        <a href="/login" class="text-blue-700 hover:text-blue-900">
+            To Login Page
+        </a>
+    </div>
 </form>
 @endsection
