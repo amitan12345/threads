@@ -13,6 +13,8 @@ class Header extends Component
     public string $otherUserName = '';
     public Collection $users;
 
+    public bool $isUserListVisible = false;
+
     public function mount()
     {
         $this->userName = Auth::user()->name;
@@ -27,6 +29,16 @@ class Header extends Component
         }
 
         $this->users = User::where('id', '!=', Auth::id())->where('name', 'like', "%{$this->otherUserName}%")->get();
+    }
+
+    public function showUserList()
+    {
+        $this->isUserListVisible = true;
+    }
+
+    public function hideUserList()
+    {
+        $this->isUserListVisible = false;
     }
 
     public function render()
