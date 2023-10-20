@@ -10,6 +10,13 @@ class SwitchThreadAndTweetView extends Component
     public bool $isThreadActive = true;
     public bool $isTweetActive = false;
 
+    public int $userId;
+
+    public function mount(int $userId)
+    {
+        $this->userId = $userId;
+    }
+
     #[On('activate-threads')]
     public function activateThread()
     {

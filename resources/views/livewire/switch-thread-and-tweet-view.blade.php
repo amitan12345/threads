@@ -5,10 +5,10 @@
     </div>
     <div class="w-full h-full bg-gray-100 overflow-auto border-2 border-black">
         <div class="{{ $isThreadActive ? '' : 'hidden' }}">
-            <livewire:user-thread-list />
+            <livewire:user-thread-list :userId="$userId" />
         </div>
         <div class="{{ $isTweetActive ? '' : 'hidden' }}">
-            <livewire:user-tweet-list />
+            <livewire:user-tweet-list :userId="$userId" />
         </div>
     </div>
 </div>

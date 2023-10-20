@@ -12,15 +12,18 @@ class UserTweetList extends Component
 {
     public Collection $tweets;
 
-    public function mount()
+    public int $userId;
+
+    public function mount(int $userId)
     {
+        $this->userId = $userId;
         $this->updateTweets();
     }
 
     #[On('posted-tweet')]
     public function updateTweets()
     {
-        $this->tweets = Tweet::where('user_id', Auth::user()->id)->orderByDesc('created_at')->get();
+        $this->tweets = Tweet::where('user_id', $this->userId)->orderByDesc('created_at')->get();
     }
 
     public function render()

@@ -9,7 +9,7 @@
         ID:{{ \Auth::id() }}
     </div>
 </div>
-<livewire:switch-thread-and-tweet-view />
+<livewire:switch-thread-and-tweet-view :userId="\Auth::id()" />
 <livewire:create-thread-button />
 <livewire:post-tweet-button />
 @endsection
