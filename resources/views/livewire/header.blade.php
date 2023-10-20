@@ -28,10 +28,12 @@
 
     <div class="fixed top-6 left-1/4 w-1/2 bg-white h-60 border-2 border-black overflow-auto z-20 @if(!$isUserListVisible) hidden @endif"">
         @foreach($users as $user)
-            <div class="w-full h-16 border-b-2 border-black bg-green-200">
-                <div>{{ $user->id }}</div>
-                <div>{{ $user->name }}</div>
-            </div>
+            <a href="/dashboard/{{ $user->id }}">
+                <div class="w-full h-16 border-b-2 border-black bg-green-200 hover:bg-green-400">
+                    <div>{{ $user->id }}</div>
+                    <div>{{ $user->name }}</div>
+                </div>
+            </a>
         @endforeach
     </div>
 

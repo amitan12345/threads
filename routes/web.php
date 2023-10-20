@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Login\LoginController;
 use App\Http\Controllers\Login\LoginFormController;
+use App\Http\Controllers\OtherUserDashboardController;
 use App\Http\Controllers\RegisterAccountController;
 use App\Http\Controllers\ThreadDetailController;
 use Illuminate\Support\Facades\Route;
@@ -29,4 +30,6 @@ Route::group(['middleware' => ['auth']], function() {
     Route::redirect('/', '/dashboard', 301);
 
     Route::get('/thread/{threadId}', [ThreadDetailController::class, 'index']);
+
+    Route::get('/dashboard/{userId}', [OtherUserDashboardController::class, 'index']);
 });
